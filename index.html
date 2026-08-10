@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -305,6 +306,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .quick-submit{height:50px;font-size:16px;}
   }
 
+
+
+  /* our projects */
+  .projects-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+  .project-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;}
+  .project-card:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(20,50,120,.14);border-color:#C7D7FA;}
+  .project-browser{margin:14px 14px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#EEF3FA;box-shadow:0 10px 24px rgba(20,50,120,.10);}
+  .project-browser-bar{height:30px;display:flex;align-items:center;gap:8px;padding:0 10px;background:#F3F6FB;border-bottom:1px solid var(--line);}
+  .project-browser-dots{display:flex;gap:5px;flex-shrink:0;}
+  .project-browser-dots i{width:7px;height:7px;border-radius:50%;display:block;background:#C5CDDA;}
+  .project-browser-dots i:nth-child(1){background:#FF605C}.project-browser-dots i:nth-child(2){background:#FFBD44}.project-browser-dots i:nth-child(3){background:#00CA4E}
+  .project-browser-url{flex:1;min-width:0;border:1px solid #E1E7F0;border-radius:5px;background:#fff;padding:4px 8px;text-align:center;color:#98A2B3;font-size:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .project-image{height:205px;overflow:hidden;cursor:zoom-in;background:#EDF2F8;position:relative;}
+  .project-image img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .55s ease,object-position 1.2s ease;}
+  .project-card:hover .project-image img{transform:scale(1.04);object-position:center center;}
+  .project-body{padding:17px 18px 19px;display:flex;justify-content:space-between;gap:12px;align-items:flex-end;}
+  .project-type{display:block;color:var(--blue);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+  .project-body h3{font-size:16px;margin-bottom:4px;}.project-body p{font-size:12.5px;color:var(--ink-soft);}
+  .project-preview-btn{border:0;background:transparent;color:var(--blue);font:inherit;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;padding:3px 0;}
+  .projects-more{text-align:center;margin-top:28px;}
+  .projects-more .btn{min-width:250px;}
+  .project-modal{position:fixed;inset:0;z-index:1000;background:rgba(11,18,32,.82);display:none;place-items:center;padding:20px;backdrop-filter:blur(8px);}
+  .project-modal.open{display:grid;}
+  .project-modal-box{position:relative;width:min(1000px,96vw);max-height:90vh;overflow:auto;border-radius:16px;background:#fff;box-shadow:0 30px 80px rgba(0,0,0,.35);}
+  .project-modal-box img{width:100%;height:auto;display:block;}
+  .project-modal-close{position:sticky;top:12px;z-index:2;float:right;width:40px;height:40px;margin:12px 12px -52px 0;border:0;border-radius:10px;background:rgba(11,18,32,.88);color:#fff;font-size:20px;cursor:pointer;}
+  @media(max-width:960px){.projects-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+  @media(max-width:640px){.projects-grid{grid-template-columns:1fr}.project-image{height:210px}.project-body{padding:15px}.project-body h3{font-size:15px}.projects-more .btn{width:100%;}}
+
 </style>
 </head>
 <body>
@@ -326,7 +356,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
       <span class="pill">#1 Web Design &amp; Development Company in Delhi NCR</span>
       <h1>Boost Your Sales by <span class="accent">10X</span> with the Best Website Design Company in Delhi NCR</h1>
-      <p class="price">Starting from <b>₹9,999/-</b> + GST</p>
+      <p class="price">Starting from <b>₹5,999/-</b> + GST</p>
       <p class="lead">Our award-winning website design agency in Delhi NCR crafts stunning, mobile-friendly websites proven to <b>boost leads by 200%</b> and <b>sales by 30%</b>. Let's turn your online presence into a powerful growth engine.</p>
       <div class="badge-row">
         <div class="badge-item">🏆 Award Winning Team</div>
@@ -419,6 +449,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="bonus-cta"><a href="tel:+919643669201" class="btn btn-blue">Book a FREE Consultation Call Now</a></div>
   </div>
 </section>
+
+
+<section class="section" id="our-projects" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head">
+      <h2>Our Projects</h2>
+      <p>Explore some of the websites we've created for businesses across ecommerce, healthcare, education, corporate, jewellery and real estate industries.</p>
+    </div>
+
+    <div class="projects-grid">
+      <article class="project-card">
+        <div class="project-browser"><div class="project-browser-bar"><span class="project-browser-dots"><i></i><i></i><i></i></span><span class="project-browser-url">www.client-project.com</span></div><div class="project-image" data-project-image="1.png" data-project-title="Premium Fashion Store"><img src="1.png" alt="Premium Fashion Store website project" loading="lazy"></div></div>
+        <div class="project-body"><div><span class="project-type">Fashion Ecommerce</span><h3>Premium Fashion Store</h3><p>Modern online shopping experience.</p></div><button class="project-preview-btn" type="button" data-project-image="1.png" data-project-title="Premium Fashion Store">Live Preview</button></div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-browser"><div class="project-browser-bar"><span class="project-browser-dots"><i></i><i></i><i></i></span><span class="project-browser-url">www.client-project.com</span></div><div class="project-image" data-project-image="jwallerly.png" data-project-title="Luxury Jewellery Store"><img src="jwallerly.png" alt="Luxury Jewellery Store website project" loading="lazy"></div></div>
+        <div class="project-body"><div><span class="project-type">Jewellery</span><h3>Luxury Jewellery Store</h3><p>Premium product catalogue and storefront.</p></div><button class="project-preview-btn" type="button" data-project-image="jwallerly.png" data-project-title="Luxury Jewellery Store">Live Preview</button></div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-browser"><div class="project-browser-bar"><span class="project-browser-dots"><i></i><i></i><i></i></span><span class="project-browser-url">www.client-project.com</span></div><div class="project-image" data-project-image="health_care.png" data-project-title="Hospital Website"><img src="health_care.png" alt="Hospital and healthcare website project" loading="lazy"></div></div>
+        <div class="project-body"><div><span class="project-type">Healthcare</span><h3>Hospital Website</h3><p>Patient-focused digital experience.</p></div><button class="project-preview-btn" type="button" data-project-image="health_care.png" data-project-title="Hospital Website">Live Preview</button></div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-browser"><div class="project-browser-bar"><span class="project-browser-dots"><i></i><i></i><i></i></span><span class="project-browser-url">www.client-project.com</span></div><div class="project-image" data-project-image="university.png" data-project-title="Education Platform"><img src="university.png" alt="University and education website project" loading="lazy"></div></div>
+        <div class="project-body"><div><span class="project-type">Education</span><h3>Education Platform</h3><p>Modern institutional website.</p></div><button class="project-preview-btn" type="button" data-project-image="university.png" data-project-title="Education Platform">Live Preview</button></div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-browser"><div class="project-browser-bar"><span class="project-browser-dots"><i></i><i></i><i></i></span><span class="project-browser-url">www.client-project.com</span></div><div class="project-image" data-project-image="corporate.png" data-project-title="Business Website"><img src="corporate.png" alt="Corporate business website project" loading="lazy"></div></div>
+        <div class="project-body"><div><span class="project-type">Corporate</span><h3>Business Website</h3><p>Professional corporate web presence.</p></div><button class="project-preview-btn" type="button" data-project-image="corporate.png" data-project-title="Business Website">Live Preview</button></div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-browser"><div class="project-browser-bar"><span class="project-browser-dots"><i></i><i></i><i></i></span><span class="project-browser-url">www.client-project.com</span></div><div class="project-image" data-project-image="Real estate website.png" data-project-title="Property Platform"><img src="Real estate website.png" alt="Real estate property website project" loading="lazy"></div></div>
+        <div class="project-body"><div><span class="project-type">Real Estate</span><h3>Property Platform</h3><p>Property-focused lead generation website.</p></div><button class="project-preview-btn" type="button" data-project-image="Real estate website.png" data-project-title="Property Platform">Live Preview</button></div>
+      </article>
+    </div>
+
+    <div class="projects-more"><a href="https://wa.me/919643669201?text=Hello%20Vatshayan%20Technologies%2C%20please%20share%20more%20of%20your%20website%20portfolio." class="btn btn-outline" target="_blank" rel="noopener">Request More Portfolio Examples</a></div>
+  </div>
+</section>
+
+<div class="project-modal" id="projectModal" aria-hidden="true">
+  <div class="project-modal-box" role="dialog" aria-modal="true" aria-label="Project preview">
+    <button class="project-modal-close" id="projectModalClose" type="button" aria-label="Close project preview">×</button>
+    <img id="projectModalImage" src="" alt="Project preview">
+  </div>
+</div>
 
 <section class="section" style="padding-top:0;">
   <div class="container">
@@ -671,6 +752,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <script>
+
+  // Project preview modal
+  const projectModal = document.getElementById('projectModal');
+  const projectModalImage = document.getElementById('projectModalImage');
+  const projectModalClose = document.getElementById('projectModalClose');
+
+  function openProjectModal(image, title){
+    projectModalImage.src = image;
+    projectModalImage.alt = title + ' project preview';
+    projectModal.classList.add('open');
+    projectModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeProjectModal(){
+    projectModal.classList.remove('open');
+    projectModal.setAttribute('aria-hidden','true');
+    projectModalImage.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-project-image]').forEach(el=>{
+    el.addEventListener('click',()=>openProjectModal(el.dataset.projectImage, el.dataset.projectTitle || 'Website'));
+    if(el.classList.contains('project-image')){
+      el.setAttribute('tabindex','0');
+      el.setAttribute('role','button');
+      el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProjectModal(el.dataset.projectImage,el.dataset.projectTitle||'Website');}});
+    }
+  });
+  projectModalClose.addEventListener('click',closeProjectModal);
+  projectModal.addEventListener('click',e=>{if(e.target===projectModal)closeProjectModal();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&projectModal.classList.contains('open'))closeProjectModal();});
+
   document.querySelectorAll('.faq-item').forEach(item=>{
     item.querySelector('.faq-q').addEventListener('click',()=>{
       const isOpen = item.classList.contains('open');
