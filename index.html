@@ -278,6 +278,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     footer{padding-bottom:92px;}
   }
 
+  .legal-link{color:#C9D4EA;text-decoration:underline;text-underline-offset:3px;}
+  .legal-link:hover{color:#fff;}
+
+  .legal-overlay{position:fixed;inset:0;z-index:100000;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(15,23,42,.62);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s ease;}
+  .legal-overlay.show{opacity:1;visibility:visible;}
+  .legal-modal{position:relative;width:min(100%,620px);max-height:calc(100vh - 36px);overflow:auto;background:#fff;border-radius:18px;padding:28px 28px 24px;box-shadow:0 28px 80px rgba(15,23,42,.35);text-align:left;}
+  .legal-modal h3{font-size:24px;line-height:1.2;margin:0 38px 16px 0;color:var(--ink);}
+  .legal-content p{font-size:13.5px;line-height:1.75;color:var(--ink-soft);margin:0 0 12px;}
+  .legal-content strong{color:var(--ink);}
+  .legal-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border:0;border-radius:50%;background:#EEF4FF;color:#1E63E9;font-size:25px;line-height:1;cursor:pointer;transition:transform .2s ease,background .2s ease;}
+  .legal-close:hover{background:#DCE8FF;transform:rotate(90deg);}
+
+  .float-phone{display:none;position:fixed;left:14px;bottom:16px;z-index:60;width:58px;height:58px;border-radius:50%;background:#1677FF;color:#fff;align-items:center;justify-content:center;text-decoration:none;border:3px solid #fff;box-shadow:0 14px 32px rgba(22,119,255,.38);animation:phoneFloat 2.8s ease-in-out infinite;}
+  .float-phone::before{content:"";position:absolute;inset:-6px;border:2px solid rgba(22,119,255,.28);border-radius:50%;animation:waPulse 2s ease-out infinite;pointer-events:none;}
+  .float-phone svg{width:27px;height:27px;fill:currentColor;}
+  @keyframes phoneFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+  @media(max-width:640px){.float-phone{display:flex;} .legal-modal{padding:24px 18px 20px;border-radius:16px;} .legal-modal h3{font-size:21px;} .legal-content p{font-size:13px;}}
+
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 
   /* Center enquiry modal */
@@ -653,14 +671,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer>
   <div class="container">
     <div class="logo"><img class="brand-logo-img" src="logo.png" alt="Vatshayan Technologies logo">Vatshayan Technologies</div>
-    <p>We use Google Analytics, Google Ads remarketing tags and similar cookies on this site to understand site usage and to reach people who have previously visited our site with relevant ads. See our <a href="privacy-policy.html" style="color:#C9D4EA;text-decoration:underline;">Privacy Policy</a> for details.</p>
-    <p style="margin-top:14px;"><a href="privacy-policy.html" style="color:#C9D4EA;text-decoration:underline;">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html" style="color:#C9D4EA;text-decoration:underline;">Terms of Service</a> &nbsp;·&nbsp; © 2026 Vatshayan Technologies. All rights reserved.</p>
+    <p>This site is not part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. We use Google remarketing pixels/cookies on this site to re-communicate with people who visit our site and ensure that we are able to reach them in the future with relevant messages and information.</p>
+    <p style="margin-top:14px;"><a href="#privacy" class="legal-link" data-legal="privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="#terms" class="legal-link" data-legal="terms">Terms &amp; Conditions</a> &nbsp;·&nbsp; © 2026 Vatshayan Technologies. All rights reserved.</p>
   </div>
 </footer>
+
+<a href="tel:+919643669201" class="float-phone" aria-label="Call Vatshayan Technologies">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+</a>
 
 <a href="https://wa.me/919643669201?text=Hello%20Vatshayan%20Technologies%2C%20I%20want%20to%20discuss%20a%20website%20project." class="float-wa" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.21c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.98 2.65 1.12 2.83c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.52-.08 1.59-.65 1.82-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM16.03 3.2c-7.05 0-12.78 5.72-12.78 12.77 0 2.25.59 4.45 1.7 6.39L3.14 29l6.8-1.78a12.72 12.72 0 0 0 6.08 1.55h.01c7.04 0 12.77-5.73 12.77-12.78 0-3.41-1.33-6.62-3.74-9.03A12.7 12.7 0 0 0 16.03 3.2zm0 23.41h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.04 1.06 1.08-3.94-.25-.4a10.61 10.61 0 1 1 9.01 4.99z"/></svg><span class="wa-label">Chat with us</span></a>
 
 
+
+<!-- Privacy Policy / Terms Modal -->
+<div class="legal-overlay" id="legalOverlay" aria-hidden="true">
+  <div class="legal-modal" role="dialog" aria-modal="true" aria-labelledby="legalTitle">
+    <button class="legal-close" id="legalClose" type="button" aria-label="Close">&times;</button>
+    <h3 id="legalTitle">Privacy Policy</h3>
+    <div id="legalContent" class="legal-content"></div>
+  </div>
+</div>
 
 <!-- Center Quick Enquiry Popup -->
 <div class="quick-lead-overlay" id="quickLeadOverlay" aria-hidden="true">
@@ -720,6 +751,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <script>
+
+  // Privacy Policy and Terms & Conditions modal
+  const legalOverlay = document.getElementById('legalOverlay');
+  const legalClose = document.getElementById('legalClose');
+  const legalTitle = document.getElementById('legalTitle');
+  const legalContent = document.getElementById('legalContent');
+
+  const legalCopy = {
+    privacy: {
+      title: 'Privacy Policy',
+      html: `<p><strong>About Vatshayan Technologies:</strong> We have been serving businesses since 2020 and have delivered website, software and digital projects for multiple clients. We focus on reliable delivery, long-term relationships and client satisfaction.</p>
+             <p><strong>Information we collect:</strong> When you submit an enquiry, we may collect details such as your name, email, phone number, business name and other information you voluntarily provide so that our team can contact you about your project.</p>
+             <p><strong>Advertising & analytics:</strong> We may use analytics, advertising pixels, cookies and remarketing technologies, including services provided by Google, to understand website activity, measure advertising performance and show relevant messages to previous visitors.</p>
+             <p><strong>Data use:</strong> We use submitted information for enquiries, quotations, customer support, service communication and business follow-up. We do not intentionally sell your personal information. Third-party services used by this website may process data under their own privacy terms.</p>
+             <p>By using this website or submitting a form, you acknowledge this policy. You may contact us if you want to ask about information you have submitted.</p>`
+    },
+    terms: {
+      title: 'Terms & Conditions',
+      html: `<p>By using this website or submitting an enquiry, you agree to these basic terms. Information on this website is provided for general service and marketing purposes and may be updated from time to time.</p>
+             <p><strong>Project scope & pricing:</strong> Final scope, deliverables, timelines, pricing, payment terms, revisions and support will be confirmed in the applicable proposal, quotation, invoice or written agreement.</p>
+             <p><strong>No guaranteed results:</strong> Website, development, marketing, SEO or advertising outcomes can vary. Unless specifically agreed in writing, we do not guarantee rankings, leads, sales, revenue, traffic or other business results.</p>
+             <p><strong>Client responsibilities:</strong> Clients are responsible for providing accurate content, approvals, access credentials and materials they are legally entitled to use. Delays in these items may affect delivery timelines.</p>
+             <p><strong>Third-party services:</strong> Hosting, domains, payment gateways, advertising platforms, plugins, APIs and other third-party tools are subject to their own terms, availability and charges.</p>
+             <p>Submitting an enquiry does not create a binding project contract. A project begins only after mutually accepted commercial terms or written confirmation.</p>`
+    }
+  };
+
+  function openLegalModal(type){
+    const data = legalCopy[type] || legalCopy.privacy;
+    legalTitle.textContent = data.title;
+    legalContent.innerHTML = data.html;
+    legalOverlay.classList.add('show');
+    legalOverlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLegalModal(){
+    legalOverlay.classList.remove('show');
+    legalOverlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('[data-legal]').forEach(link => link.addEventListener('click', e => { e.preventDefault(); openLegalModal(link.dataset.legal); }));
+  legalClose.addEventListener('click', closeLegalModal);
+  legalOverlay.addEventListener('click', e => { if(e.target === legalOverlay) closeLegalModal(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape' && legalOverlay.classList.contains('show')) closeLegalModal(); });
 
   // Project preview modal
   const projectModal = document.getElementById('projectModal');
@@ -796,7 +871,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 
 
-  // Center popup: opens after 5 seconds whenever it is closed.
+  // Center popup: opens after 20 seconds whenever it is closed.
   const quickLeadOverlay = document.getElementById('quickLeadOverlay');
   const quickPopupClose = document.getElementById('quickPopupClose');
   const quickLeadForm = document.getElementById('quickLeadForm');
@@ -815,7 +890,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   function scheduleQuickPopup(){
     clearTimeout(quickPopupTimer);
-    if (!quickPopupSubmitted) quickPopupTimer = setTimeout(openQuickPopup, 15000);
+    if (!quickPopupSubmitted) quickPopupTimer = setTimeout(openQuickPopup, 20000);
   }
 
   function closeQuickPopup(){
